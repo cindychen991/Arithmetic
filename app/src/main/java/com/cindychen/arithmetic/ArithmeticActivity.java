@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.cindychen.arithmetic.util.Sort;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -24,27 +22,19 @@ public class ArithmeticActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /* TreeNode treeNode = layNode(mTreeNode);
-        printNode(treeNode);*/
-        int[] a = {1, 10, 4, 8, 5, 6, 2};
-        Sort.bubbleSort(a);
-        print(a,"冒泡：");
-        int[] b = {1, 10, 4, 8, 5, 6, 2};
-        Sort.inSertionSort(b);
-        print(b,"插入：");
-        int[] c = {1, 10, 4, 8, 5, 6, 2};
-        Sort.selectorInsert(c);
-        print(c,"选择：");
-       // Log.d("chen", String.valueOf(aIncludeB("aaaabbeeer", "aaabeeer")));
 
     }
 
-    private void print(int[] origin,String type){
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int anOrigin : origin) {
-            stringBuilder.append(anOrigin).append("、");
+
+    private void print(int[] origin, String type) {
+        if (origin == null || origin.length == 0) {
+            return;
         }
-        Log.d("chendandan",type+ stringBuilder.toString());
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int num : origin) {
+            stringBuilder.append(num).append("、");
+        }
+        Log.d("cindy", type + stringBuilder.toString());
     }
 
 
